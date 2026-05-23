@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>hey rahaf</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Rubik+Glitch&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    margin:0;
+    font-family:Poppins,sans-serif;
+    background:#120018;
+    color:white;
+    overflow:hidden;
+}
+
+.background{
+    position:fixed;
+    inset:0;
+    background:radial-gradient(circle at top,#4b1469,#120018 70%);
+}
+
+.container{
+    position:relative;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.card{
+    width:90%;
+    max-width:750px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:25px;
+    padding:45px;
+    text-align:center;
+}
+
+h1{
+    font-weight:400;
+    letter-spacing:2px;
+    text-transform:lowercase;
+}
+
+input{
+    margin-top:20px;
+    padding:12px;
+    width:250px;
+    border:none;
+    border-radius:12px;
+    text-align:center;
+    background:rgba(255,255,255,0.08);
+    color:white;
+}
+
+button{
+    margin-top:15px;
+    padding:12px 30px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(135deg,#8f39ff,#4b1399);
+    color:white;
+    cursor:pointer;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+.poem{
+    display:none;
+    line-height:2;
+    white-space:pre-line;
+}
+
+.hint{
+    margin-top:15px;
+    font-size:0.9rem;
+    opacity:0.7;
+}
+
+.error{
+    margin-top:10px;
+    color:#caa6ff;
+}
+
+.funky{
+    font-family:"Rubik Glitch", cursive;
+    font-size:2rem;
+    margin-top:30px;
+    color:#d6a4ff;
+    display:none;
+    animation:pop 0.6s ease-in-out;
+}
+
+@keyframes pop{
+    from{transform:scale(0.5);opacity:0;}
+    to{transform:scale(1);opacity:1;}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+
+<div class="card" id="start">
+
+    <h1>hey rahaf</h1>
+
+    <p>before you enter the poem, answer this:</p>
+
+    <p><b>what hides behind the developer’s name?</b></p>
+
+    <p class="hint">hint: the developer with i</p>
+
+    <input id="ans" placeholder="your answer..."/>
+    <br>
+    <button onclick="check()">unlock</button>
+
+    <div class="error" id="err"></div>
+
+    <div class="funky" id="funky">
+        sike you thought!
+    </div>
+
+</div>
+
+<div class="card poem" id="poem">
+
+<h1>hey rahaf</h1>
+
+she is my world, my beginning and end,
+my greatest adventure, my very best friend
+
+the world is a shadow when compared to you
+the truest of blessings i ever once knew
+
+pure is voice that she does own
+the sweetest comfort that ive ever known
+
+the moon looks down from up above 
+admiring her with silent love
+
+the stars all talk as she pass
+like diamonds falling on a glass
+
+walk is just like the midnight air,
+with silent beauty, pretty and rare
+
+night sky is huge and deep
+a quiet space where angels sleep
+
+but all its stars would fade from view,
+the moment my gaze drifts to you.
+
+<br><br>
+
+as kafka once said:<br><br>
+
+“if a million loved you, im one of them  
+and if one loved you that was me,  
+if no one loved you then know that i am dead”
+
+</div>
+
+</div>
+
+<script>
+
+function check(){
+
+    const val=document.getElementById("ans").value.trim().toLowerCase();
+
+    if(val==="othmani"){
+
+        document.getElementById("funky").style.display="block";
+
+        setTimeout(()=>{
+            document.getElementById("start").style.display="none";
+            document.getElementById("poem").style.display="block";
+        },1800);
+
+    }else{
+
+        document.getElementById("err").innerText="not even close.";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
